@@ -1,0 +1,85 @@
+.header-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c6b1f6;
+  transition:
+    box-shadow 200ms ease,
+    background-color 200ms ease;
+}
+.nav-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 18px;
+  box-sizing: border-box;
+  transition: padding 200ms ease;
+}
+.ul-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ul-container a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  padding: 8px 12px;
+  transition:
+    color 150ms ease,
+    transform 150ms ease;
+}
+/* Faz com que quando passe o mouse emcima, ele apareca a cor amarela*/
+.ul-container a:hover {
+  color: #593ea1;
+  transform: translateY(-2px);
+}
+
+/* Imagem do menu: visível, redonda e com ~20% da largura do container */
+.header-menu img,
+.nav-container img,
+.menu-logo {
+  width: 60%;
+  max-width: 120px;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 10px;
+  transition:
+    width 180ms ease,
+    max-width 180ms ease,
+    transform 180ms ease;
+}
+
+/* Ajuste responsivo: reduz um pouco a imagem em telas pequenas */
+@media (max-width: 480px) {
+  .header-menu img,
+  .nav-container img,
+  .menu-logo {
+    width: 36%;
+    max-width: 84px;
+  }
+}
+
+/* Shrink state applied while scrolling */
+.header-menu.shrink {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+.header-menu.shrink .nav-container {
+  padding: 8px 12px;
+}
+.header-menu.shrink .menu-logo {
+  width: 12%;
+  max-width: 76px;
+}
+.header-menu.shrink .ul-container a {
+  padding: 6px 8px;
+  font-size: 0.95rem;
+}
