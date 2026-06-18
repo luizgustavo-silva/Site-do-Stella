@@ -46,6 +46,67 @@ function Home() {
           </div>
         </div>
       </div>
+      <div className="conteiner-cards-motivos">
+        <div className="card-motivo">
+          <h1 className="card-title"></h1>
+          <p className="card-paragrafo"> </p>
+        </div>
+        <div className="card-motivo">
+          <h1 className="card-title"></h1>
+          <p className="card-paragrafo"></p>
+        </div>
+        <div className="card-motivo">
+          <h1 className="card-title"></h1>
+          <p className="card-paragrafo"></p>
+        </div>
+      </div>
+      <div className="secao-mulheres-ciencia">
+        <div className="cabecalho-mulheres">
+          <h1>Mulheres na Ciência</h1>
+          <p>
+            Mulheres que mudaram o mundo e continuam revolucionando ele até
+            hoje.
+          </p>
+        </div>
+
+        <div className="carrossel">
+          <div className="carrossel-track">
+            <div className="card-cientista">
+              <img src="/imagens/marie-curie.jpg" alt="Marie Curie" />
+              <h2>Marie Curie</h2>
+            </div>
+
+            <div className="card-cientista">
+              <img src="/imagens/ada-lovelace.jpg" alt="Ada Lovelace" />
+              <h2>Ada Lovelace</h2>
+            </div>
+
+            <div className="card-cientista">
+              <img
+                src="/imagens/katherine-johnson.jpg"
+                alt="Katherine Johnson"
+              />
+              <h2>Katherine Johnson</h2>
+            </div>
+
+            <div className="card-cientista">
+              <img src="/imagens/tu-youyou.jpg" alt="Tu Youyou" />
+              <h2>Tu Youyou</h2>
+            </div>
+
+            {/* Repetição para ficar infinito */}
+            <div className="card-cientista">
+              <img src="/imagens/marie-curie.jpg" alt="Marie Curie" />
+              <h2>Marie Curie</h2>
+            </div>
+
+            <div className="card-cientista">
+              <img src="/imagens/ada-lovelace.jpg" alt="Ada Lovelace" />
+              <h2>Ada Lovelace</h2>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

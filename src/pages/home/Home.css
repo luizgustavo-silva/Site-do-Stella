@@ -122,6 +122,69 @@
   top: 0;
   left: 0;
 }
+.secao-mulheres-ciencia {
+  background: #f5efff;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.cabecalho-mulheres {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.cabecalho-mulheres h1 {
+  color: #6d28d9;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.cabecalho-mulheres p {
+  color: #8b5cf6;
+  font-size: 1.2rem;
+}
+
+.carrossel {
+  overflow: hidden;
+}
+
+.carrossel-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: deslizar 25s linear infinite;
+}
+
+.card-cientista {
+  background: white;
+  border: 2px solid #d8b4fe;
+  border-radius: 25px;
+  padding: 15px;
+  min-width: 250px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(109, 40, 217, 0.15);
+}
+
+.card-cientista img {
+  width: 220px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.card-cientista h2 {
+  color: #6d28d9;
+  margin-top: 15px;
+}
+
+@keyframes deslizar {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
 
 /* Animação que alterna entre mostrar e esconder os textos */
 @keyframes fadeTextoDuasOpcoes {
