@@ -1,0 +1,202 @@
+/* ===================================
+   HOME - Página Inicial do Site Stella
+   =================================== */
+
+/* Container principal da página home */
+.conteiner-home {
+  width: 100%;
+}
+
+/* Container do banner que contém a imagem de fundo e o conteúdo */
+.conteiner-banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imagem de fundo do banner com os participantes do Stella */
+.fundo-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+/* Sobreposição com gradiente roxo para melhorar a legibilidade do texto */
+.sobreposicao-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(89, 62, 161, 0.6),
+    rgba(198, 177, 246, 0.5)
+  );
+  z-index: 1;
+}
+
+/* Conteúdo principal do banner (textos, ícones e elementos) */
+.conteudo-banner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Container para agrupar o título e subtítulo */
+.texto-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Título do banner - "Bem-vindo a [engrenagem] Stella/STEM!" */
+.titulo-banner {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #2d1b4e;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+
+/* Engrenagem que substitui o "o" em "ao" - fica rotacionando continuamente */
+.engrenagem-no-texto {
+  font-size: 2.3rem;
+  color: #593ea1;
+  animation: girarEngrenagem 6s linear infinite;
+  display: inline-block;
+  margin: 0 4px;
+  line-height: 1;
+}
+
+/* Animação de rotação contínua da engrenagem */
+@keyframes girarEngrenagem {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Container para alternar entre os textos "Stella" e "STEM" com efeito de fade */
+.texto-animado {
+  position: relative;
+  display: inline-block;
+  min-height: 1.2em;
+  color: #593ea1;
+}
+
+/* Estilos base para os textos animados "Stella" e "STEM" */
+.texto-stella,
+.texto-stem {
+  display: block;
+  animation: fadeTextoDuasOpcoes 6s infinite;
+  color: #593ea1;
+  font-weight: bold;
+}
+
+/* Atraso de 3 segundos para o segundo texto (STEM) aparecer depois do primeiro */
+.texto-stem {
+  animation-delay: 3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Animação que alterna entre mostrar e esconder os textos */
+@keyframes fadeTextoDuasOpcoes {
+  0%,
+  45% {
+    opacity: 1;
+    visibility: visible;
+  }
+  50%,
+  95% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Subtítulo com frase inspiradora da marca */
+.subtitulo-banner {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+/* ===========================
+   RESPONSIVIDADE TABLETS
+   =========================== */
+@media (max-width: 768px) {
+  /* Reduz a altura do banner em tablets */
+  .conteiner-banner {
+    height: 350px;
+  }
+
+  /* Reduz o tamanho do título em tablets */
+  .titulo-banner {
+    font-size: 2.2rem;
+  }
+
+  /* Reduz o tamanho da engrenagem proporcionalmente */
+  .engrenagem-no-texto {
+    font-size: 1.6rem;
+  }
+
+  /* Reduz o tamanho do subtítulo em tablets */
+  .subtitulo-banner {
+    font-size: 1.1rem;
+  }
+}
+
+/* ===========================
+   RESPONSIVIDADE CELULARES
+   =========================== */
+@media (max-width: 480px) {
+  /* Reduz ainda mais a altura do banner em celulares */
+  .conteiner-banner {
+    height: 280px;
+  }
+
+  /* Reduz o tamanho do título em celulares */
+  .titulo-banner {
+    font-size: 1.8rem;
+  }
+
+  /* Reduz o tamanho da engrenagem para celulares */
+  .engrenagem-no-texto {
+    font-size: 1.2rem;
+  }
+
+  /* Reduz o tamanho do subtítulo em celulares */
+  .subtitulo-banner {
+    font-size: 0.95rem;
+  }
+}

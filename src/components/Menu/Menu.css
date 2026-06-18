@@ -1,13 +1,26 @@
-.header-menu {
+/* ===================================
+   MENU - Barra de Navegação
+   =================================== */
+
+/* Cabeçalho/Menu fixo no topo que acompanha o scroll */
+.cabecalho-menu {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #c6b1f6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
   transition:
     box-shadow 200ms ease,
     background-color 200ms ease;
 }
-.nav-container {
+
+/* Container da navegação */
+.conteiner-nav {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -15,7 +28,9 @@
   box-sizing: border-box;
   transition: padding 200ms ease;
 }
-.ul-container {
+
+/* Lista de links de navegação */
+.conteiner-lista {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +39,9 @@
   padding: 0;
   margin: 0;
 }
-.ul-container a {
+
+/* Estilos dos links de navegação */
+.link-nav {
   color: #ffffff;
   font-weight: bold;
   text-decoration: none;
@@ -35,16 +52,17 @@
     color 150ms ease,
     transform 150ms ease;
 }
-/* Faz com que quando passe o mouse emcima, ele apareca a cor amarela*/
-.ul-container a:hover {
+
+/* Efeito ao passar o mouse nos links - muda cor e move levemente para cima */
+.link-nav:hover {
   color: #593ea1;
   transform: translateY(-2px);
 }
 
-/* Imagem do menu: visível, redonda e com ~20% da largura do container */
-.header-menu img,
-.nav-container img,
-.menu-logo {
+/* Estilos para imagens do menu (logo Stella) */
+.cabecalho-menu img,
+.conteiner-nav img,
+.logo-menu {
   width: 60%;
   max-width: 120px;
   height: auto;
@@ -58,28 +76,40 @@
     transform 180ms ease;
 }
 
-/* Ajuste responsivo: reduz um pouco a imagem em telas pequenas */
+/* ===========================
+   RESPONSIVIDADE CELULARES
+   =========================== */
 @media (max-width: 480px) {
-  .header-menu img,
-  .nav-container img,
-  .menu-logo {
+  /* Reduz tamanho das imagens em celulares */
+  .cabecalho-menu img,
+  .conteiner-nav img,
+  .logo-menu {
     width: 36%;
     max-width: 84px;
   }
 }
 
-/* Shrink state applied while scrolling */
-.header-menu.shrink {
+/* ===========================
+   ESTADO REDUZIDO (ao fazer scroll)
+   =========================== */
+/* Estado aplicado quando o usuário faz scroll e o menu encolhe */
+.cabecalho-menu.reduzido {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
-.header-menu.shrink .nav-container {
+
+/* Reduz padding quando o menu está reduzido */
+.cabecalho-menu.reduzido .conteiner-nav {
   padding: 8px 12px;
 }
-.header-menu.shrink .menu-logo {
-  width: 12%;
-  max-width: 76px;
+
+/* Logo aumenta um pouco quando o menu reduz (para não ficar muito pequena) */
+.cabecalho-menu.reduzido .logo-menu {
+  width: 50%;
+  max-width: 110px;
 }
-.header-menu.shrink .ul-container a {
+
+/* Links ficam menores quando o menu reduz */
+.cabecalho-menu.reduzido .conteiner-lista a {
   padding: 6px 8px;
   font-size: 0.95rem;
 }

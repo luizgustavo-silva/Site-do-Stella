@@ -1,4 +1,9 @@
-.footer-container {
+/* ===================================
+   FOOTER - Rodapé do Site Stella
+   =================================== */
+
+/* Container principal do rodapé */
+.conteiner-rodape {
   padding: 24px;
   background-color: #f5f0ff;
   display: flex;
@@ -8,8 +13,8 @@
   position: relative;
 }
 
-/* A linha separatoria do footer*/
-.footer-container::after {
+/* Linha separatória vertical no meio do rodapé */
+.conteiner-rodape::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -20,7 +25,8 @@
   opacity: 0.3;
 }
 
-.lado-titulo h1 {
+/* Títulos na seção esquerda (Logos) */
+.secao-titulo h1 {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -29,7 +35,9 @@
   color: #593ea1;
   font-weight: bold;
 }
-.lado-contato h1 {
+
+/* Títulos na seção direita (Contatos) */
+.secao-contato h1 {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -40,29 +48,35 @@
   font-weight: bold;
 }
 
+/* Estilos para links de redes sociais (Instagram, TikTok) */
 .link-contato {
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
-  font-size: 20px;
+  font-size: 32px;
 }
 
+/* Efeito hover nos ícones de redes sociais - aumenta tamanho */
 .link-contato:hover {
   transform: scale(1.2);
 }
 
-.footer-logo {
+/* Logo do Stella no rodapé */
+.logo-rodape {
   width: 28px;
   height: 28px;
   object-fit: cover;
   border-radius: 50%;
 }
-.footer-logo-jvlle {
+
+/* Logo do IFSC Joinville no rodapé */
+.logo-ifsc-jvlle {
   width: 200px;
   margin-top: 10px;
 }
 
-.email-link {
+/* Estilos do email clicável */
+.link-email {
   cursor: pointer;
   color: #593ea1;
   text-decoration: none;
@@ -75,17 +89,20 @@
   border-radius: 4px;
 }
 
-.email-link:hover {
+/* Efeito hover no email - muda cor e aumenta levemente */
+.link-email:hover {
   background-color: rgba(89, 62, 161, 0.1);
-  animation: scaleUp 0.3s ease forwards;
+  animation: aumentarTamanho 0.3s ease forwards;
   color: #593ea1;
 }
 
-.email-link:active {
+/* Efeito ao clicar no email - diminui um pouco */
+.link-email:active {
   transform: scale(0.98);
 }
 
-.email-link[title]:hover::after {
+/* Tooltip que aparece ao passar mouse - mostra texto do atributo title */
+.link-email[title]:hover::after {
   content: attr(title);
   position: absolute;
   bottom: 130%;
@@ -101,7 +118,8 @@
   pointer-events: none;
 }
 
-.email-link[title]:hover::before {
+/* Seta do tooltip (triângulo) */
+.link-email[title]:hover::before {
   content: "";
   position: absolute;
   bottom: 122%;
@@ -113,11 +131,27 @@
   pointer-events: none;
 }
 
-.email-link.copied[title]:hover::after {
+/* Tooltip com fundo verde quando email foi copiado */
+.link-email.copiado[title]:hover::after {
   background-color: #27ae60;
   content: attr(title);
 }
 
-.email-link.copied[title]:hover::before {
+/* Seta do tooltip fica verde quando email foi copiado */
+.link-email.copiado[title]:hover::before {
   border-top-color: #27ae60;
+}
+
+/* ===========================
+   ANIMAÇÕES
+   =========================== */
+
+/* Animação de aumento suave */
+@keyframes aumentarTamanho {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
