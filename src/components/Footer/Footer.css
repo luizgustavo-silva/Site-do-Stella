@@ -4,13 +4,14 @@
 
 /* Container principal do rodapé */
 .conteiner-rodape {
-  padding: 24px;
-  background-color: #f5f0ff;
+  padding: 24px 24px 20px;
+  background-color: #ad8ef7;
   display: flex;
   gap: 30%;
   align-items: center;
   justify-content: center;
   position: relative;
+  flex-wrap: wrap;
 }
 
 /* Linha separatória vertical no meio do rodapé */
@@ -56,12 +57,12 @@
   font-size: 32px;
 }
 
-/* Efeito hover nos ícones de redes sociais - aumenta tamanho */
+/* Efeito hover nos ícones de redes sociais */
 .link-contato:hover {
   transform: scale(1.2);
 }
 
-/* Logo do Stella no rodapé */
+/* Logo do Stella */
 .logo-rodape {
   width: 28px;
   height: 28px;
@@ -69,13 +70,13 @@
   border-radius: 50%;
 }
 
-/* Logo do IFSC Joinville no rodapé */
+/* Logo do IFSC */
 .logo-ifsc-jvlle {
   width: 200px;
   margin-top: 10px;
 }
 
-/* Estilos do email clicável */
+/* Email */
 .link-email {
   cursor: pointer;
   color: #593ea1;
@@ -89,19 +90,16 @@
   border-radius: 4px;
 }
 
-/* Efeito hover no email - muda cor e aumenta levemente */
 .link-email:hover {
   background-color: rgba(89, 62, 161, 0.1);
   animation: aumentarTamanho 0.3s ease forwards;
   color: #593ea1;
 }
 
-/* Efeito ao clicar no email - diminui um pouco */
 .link-email:active {
   transform: scale(0.98);
 }
 
-/* Tooltip que aparece ao passar mouse - mostra texto do atributo title */
 .link-email[title]:hover::after {
   content: attr(title);
   position: absolute;
@@ -118,7 +116,6 @@
   pointer-events: none;
 }
 
-/* Seta do tooltip (triângulo) */
 .link-email[title]:hover::before {
   content: "";
   position: absolute;
@@ -131,26 +128,32 @@
   pointer-events: none;
 }
 
-/* Tooltip com fundo verde quando email foi copiado */
 .link-email.copiado[title]:hover::after {
   background-color: #27ae60;
   content: attr(title);
 }
 
-/* Seta do tooltip fica verde quando email foi copiado */
 .link-email.copiado[title]:hover::before {
   border-top-color: #27ae60;
+}
+.secao-direitos {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  padding-bottom: 10px;
+  font-size: 12px;
+  color: rgba(89, 62, 161, 0.75);
 }
 
 /* ===========================
    ANIMAÇÕES
    =========================== */
 
-/* Animação de aumento suave */
 @keyframes aumentarTamanho {
   from {
     transform: scale(1);
   }
+
   to {
     transform: scale(1.1);
   }

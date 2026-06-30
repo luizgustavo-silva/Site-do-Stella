@@ -26,13 +26,10 @@ function Footer() {
    * Mostra "Copiado!" por 2 segundos e volta ao normal
    */
   const copiarEmail = () => {
-    // Usa a API do navegador para copiar para clipboard
     navigator.clipboard.writeText(email);
 
-    // Muda estado para mostrar "Copiado!"
     setCopiado(true);
 
-    // Volta ao estado normal após 2 segundos
     setTimeout(() => setCopiado(false), 2000);
   };
 
@@ -40,19 +37,11 @@ function Footer() {
     <footer className="conteiner-rodape">
       {/* Seção esquerda: Logos */}
       <div className="secao-titulo">
-        {/* Logo e nome do Stella */}
         <h1>
-          <img
-            src={logoDoStella}
-            alt="A imagem é um ícone circular em estilo pixel art, com tons de roxo e creme. No centro, há a silhueta de perfil de uma pessoa, voltada para a direita. A figura tem traços suaves e elegantes, sem detalhes faciais. O cabelo é longo e esvoaçante, formado por três faixas curvas em tons de lilás. Sobre a cabeça, há um círculo roxo que lembra um coque ou um adorno, decorado com um pequeno símbolo semelhante a uma flor ou átomo.
-O fundo dentro do círculo é roxo-escuro, pontilhado por estrelas e pequenos brilhos em tons claros e lilases, dando uma aparência cósmica ou mágica. Todo o desenho é cercado por uma borda circular clara.
-A composição transmite uma sensação de delicadeza, mistério e conhecimento, lembrando um emblema ou logotipo relacionado ao universo, ciência ou feminilidade."
-            className="logo-rodape"
-          />{" "}
+          <img src={logoDoStella} alt="Logo Stella" className="logo-rodape" />{" "}
           Stella
         </h1>
 
-        {/* Logo do IFSC Joinville */}
         <h1>
           <img
             src={logoDoIfscJvlle}
@@ -62,12 +51,10 @@ A composição transmite uma sensação de delicadeza, mistério e conhecimento,
         </h1>
       </div>
 
-      {/* Seção direita: Contatos e Redes Sociais */}
+      {/* Seção direita: Contatos */}
       <div className="secao-contato">
-        {/* Título da seção de contatos */}
         <h1>Contatos</h1>
 
-        {/* Email clicável que copia para clipboard */}
         <p>
           <a
             className={`link-email ${copiado ? "copiado" : ""}`}
@@ -80,7 +67,6 @@ A composição transmite uma sensação de delicadeza, mistério e conhecimento,
           </a>
         </p>
 
-        {/* Link para Instagram */}
         <a
           href="https://www.instagram.com/stella.ifsc/"
           target="_blank"
@@ -93,7 +79,6 @@ A composição transmite uma sensação de delicadeza, mistério e conhecimento,
           </span>
         </a>
 
-        {/* Link para TikTok */}
         <a
           href="https://www.tiktok.com/@stella.ifsc"
           target="_blank"
@@ -105,6 +90,9 @@ A composição transmite uma sensação de delicadeza, mistério e conhecimento,
             <AiFillTikTok color="#593ea1" />
           </span>
         </a>
+      </div>
+      <div className="secao-direitos">
+        © 2026 Stella • Todos os direitos reservados.
       </div>
     </footer>
   );

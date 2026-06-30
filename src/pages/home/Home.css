@@ -136,6 +136,7 @@
 .cabecalho-mulheres h1 {
   color: #6d28d9;
   font-size: 3rem;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
@@ -175,6 +176,20 @@
 .card-cientista h2 {
   color: #6d28d9;
   margin-top: 15px;
+  font-weight: bold;
+}
+.btn-saiba-mais {
+  display: block;
+  margin: 30px auto 0;
+  padding: 6px 20px;
+  opacity: 0.8;
+  background-color: #6d28d9;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
 }
 
 @keyframes deslizar {
