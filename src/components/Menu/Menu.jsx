@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Menu.css";
 import logo from "../../assets/logo_stella.png";
 
@@ -46,44 +46,37 @@ function Menu() {
           <ul className="conteiner-lista">
             {/* Link para Home */}
             <li>
-              <Link className="link-nav" to="/">
+              <NavLink className="link-nav" to="/">
                 Home
-              </Link>
+              </NavLink>
             </li>
 
             {/* Link para Quem Somos */}
             <li>
-              <Link className="link-nav" to="/QuemSomos">
+              <NavLink className="link-nav" to="/QuemSomos">
                 Quem somos
-              </Link>
+              </NavLink>
             </li>
 
             {/* Link para Participantes */}
             <li>
-              <Link className="link-nav" to="/Participantes">
+              <NavLink className="link-nav" to="/Participantes">
                 Participantes
-              </Link>
-            </li>
-
-            {/* Link para Mulheres na Ciência */}
-            <li>
-              <Link className="link-nav" to="/MulheresNaCiencia">
-                Mulheres na ciência
-              </Link>
+              </NavLink>
             </li>
 
             {/* Link para Oficinas */}
             <li>
-              <Link className="link-nav" to="/Oficinas">
+              <NavLink className="link-nav" to="/Oficinas">
                 Oficinas
-              </Link>
+              </NavLink>
             </li>
 
             {/* Link para Eventos */}
             <li>
-              <Link className="link-nav" to="/Eventos">
+              <NavLink className="link-nav" to="/Eventos">
                 Eventos
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>

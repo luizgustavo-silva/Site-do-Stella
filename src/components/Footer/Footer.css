@@ -4,14 +4,16 @@
 
 /* Container principal do rodapé */
 .conteiner-rodape {
-  padding: 24px 24px 20px;
-  background-color: #ad8ef7;
+  padding: 18px 12px 12px;
+  background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #6d28d9 100%);
   display: flex;
-  gap: 30%;
-  align-items: center;
-  justify-content: center;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-around;
   position: relative;
   flex-wrap: wrap;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Linha separatória vertical no meio do rodapé */
@@ -19,81 +21,97 @@
   content: "";
   position: absolute;
   left: 50%;
-  top: 20%;
+  top: 25%;
   bottom: 20%;
-  width: 2px;
-  background-color: #593ea1;
-  opacity: 0.3;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* Títulos na seção esquerda (Logos) */
+.secao-titulo {
+  flex: 0 1 auto;
+  min-width: 200px;
+}
+
 .secao-titulo h1 {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.8rem;
-  margin: 0;
-  color: #593ea1;
-  font-weight: bold;
+  gap: 12px;
+  font-size: 1.6rem;
+  margin: 0 0 16px 0;
+  color: #ffffff;
+  font-weight: 800;
 }
 
 /* Títulos na seção direita (Contatos) */
+.secao-contato {
+  flex: 0 1 auto;
+  min-width: 200px;
+}
+
 .secao-contato h1 {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.8rem;
-  margin: 0;
-  margin-bottom: 10px;
-  color: #593ea1;
-  font-weight: bold;
+  gap: 12px;
+  font-size: 1.6rem;
+  margin: 0 0 16px 0;
+  color: #ffffff;
+  font-weight: 800;
 }
 
 /* Estilos para links de redes sociais (Instagram, TikTok) */
 .link-contato {
   cursor: pointer;
   transition: all 0.3s ease;
-  display: inline-block;
-  font-size: 32px;
+  display: inline-flex;
+  font-size: 28px;
+  color: #ffffff;
+  margin-right: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Efeito hover nos ícones de redes sociais */
 .link-contato:hover {
-  transform: scale(1.2);
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Logo do Stella */
 .logo-rodape {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   object-fit: cover;
   border-radius: 50%;
 }
 
 /* Logo do IFSC */
 .logo-ifsc-jvlle {
-  width: 200px;
-  margin-top: 10px;
+  width: 180px;
+  margin-top: 12px;
+  opacity: 0.95;
 }
 
 /* Email */
 .link-email {
   cursor: pointer;
-  color: #593ea1;
+  color: #e9d5ff;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
   transition: all 0.3s ease;
   position: relative;
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 4px;
+  display: block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 12px;
 }
 
 .link-email:hover {
-  background-color: rgba(89, 62, 161, 0.1);
-  animation: aumentarTamanho 0.3s ease forwards;
-  color: #593ea1;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
 }
 
 .link-email:active {
@@ -106,14 +124,15 @@
   bottom: 130%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #593ea1;
-  color: white;
+  background-color: #ffffff;
+  color: #5b21b6;
   padding: 8px 12px;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 0.85rem;
   white-space: nowrap;
   z-index: 1000;
   pointer-events: none;
+  font-weight: 700;
 }
 
 .link-email[title]:hover::before {
@@ -123,26 +142,29 @@
   left: 50%;
   transform: translateX(-50%);
   border: 6px solid transparent;
-  border-top-color: #593ea1;
+  border-top-color: #ffffff;
   z-index: 1000;
   pointer-events: none;
 }
 
 .link-email.copiado[title]:hover::after {
-  background-color: #27ae60;
+  background-color: #10b981;
+  color: #ffffff;
   content: attr(title);
 }
 
 .link-email.copiado[title]:hover::before {
-  border-top-color: #27ae60;
+  border-top-color: #10b981;
 }
+
 .secao-direitos {
   width: 100%;
   text-align: center;
-  margin-top: 30px;
-  padding-bottom: 10px;
-  font-size: 12px;
-  color: rgba(89, 62, 161, 0.75);
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* ===========================
@@ -155,6 +177,29 @@
   }
 
   to {
-    transform: scale(1.1);
+    transform: scale(1.05);
+  }
+}
+
+/* ===========================
+   RESPONSIVIDADE
+   =========================== */
+@media (max-width: 768px) {
+  .conteiner-rodape {
+    padding: 32px 20px 24px;
+    gap: 24px;
+  }
+
+  .conteiner-rodape::after {
+    display: none;
+  }
+
+  .secao-titulo h1,
+  .secao-contato h1 {
+    font-size: 1.3rem;
+  }
+
+  .logo-ifsc-jvlle {
+    width: 140px;
   }
 }

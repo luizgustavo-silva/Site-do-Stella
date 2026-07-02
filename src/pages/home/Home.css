@@ -5,6 +5,7 @@
 /* Container principal da página home */
 .conteiner-home {
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* Container do banner que contém a imagem de fundo e o conteúdo */
@@ -54,6 +55,19 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Container para agrupar o título e subtítulo */
@@ -106,26 +120,197 @@
   color: #593ea1;
 }
 
-/* Estilos base para os textos animados "Stella" e "STEM" */
-.texto-stella,
-.texto-stem {
-  display: block;
-  animation: fadeTextoDuasOpcoes 6s infinite;
-  color: #593ea1;
-  font-weight: bold;
+.secao-motivacao,
+.secao-sobre {
+  padding: 70px 24px 90px;
+  background: linear-gradient(135deg, #f7f2ff 0%, #efe7ff 100%);
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Atraso de 3 segundos para o segundo texto (STEM) aparecer depois do primeiro */
+.conteudo-sobre {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cabecalho-sobre {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 780px;
+}
+
+.tag-sobre {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #ede2ff;
+  color: #6d28d9;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cabecalho-sobre h2 {
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #4c1d95;
+}
+
+.descricao-sobre {
+  margin: 18px auto 0;
+  color: #5b21b6;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  max-width: 760px;
+}
+
+.descricao-sobre-detalhe {
+  margin-top: 16px;
+  opacity: 0.92;
+}
+
+.cabecalho-motivacao {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.tag-motivacao {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #ede2ff;
+  color: #6d28d9;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cabecalho-motivacao h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #4c1d95;
+}
+
+.conteiner-cards-motivacoes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card-motivacao {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #d8b4fe;
+  border-radius: 24px;
+  padding: 28px 24px;
+  box-shadow: 0 12px 30px rgba(109, 40, 217, 0.12);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card-motivacao {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.card-motivacao.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-motivacao:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(109, 40, 217, 0.18);
+}
+
+.icone-card-motivacao-wrapper {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.icone-card-motivacao {
+  font-size: 1.35rem;
+}
+
+.card-motivacao h3 {
+  margin: 0 0 10px;
+  color: #5b21b6;
+  font-size: 1.2rem;
+}
+
+.card-motivacao p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+/* Estilos base para os textos animados "Stella" e "STEM" */
+.texto-animado {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.2em;
+  min-width: 7.5rem;
+  color: #593ea1;
+}
+
+.texto-stella,
 .texto-stem {
-  animation-delay: 3s;
   position: absolute;
   top: 0;
   left: 0;
+  display: inline-block;
+  color: #593ea1;
+  font-weight: bold;
+  white-space: nowrap;
+  animation-fill-mode: both;
+}
+
+.texto-stella {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeTextoStella 8s ease-in-out infinite;
+}
+
+.texto-stem {
+  opacity: 0;
+  visibility: hidden;
+  animation: fadeTextoStem 8s ease-in-out infinite;
+}
+
+.ponto-exclamacao {
+  display: inline-block;
+  margin-left: 2rem;
+  font-weight: bold;
 }
 .secao-mulheres-ciencia {
-  background: #f5efff;
+  background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 45%, #a78bfa 100%);
   padding: 80px 0;
   overflow: hidden;
+  width: 110%;
+  box-sizing: border-box;
 }
 
 .cabecalho-mulheres {
@@ -133,20 +318,104 @@
   margin-bottom: 50px;
 }
 
+.secao-dados {
+  background: linear-gradient(135deg, #efe7ff 0%, #f7f2ff 100%);
+  padding: 70px 24px 90px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cabecalho-dados {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.cabecalho-dados h2 {
+  margin: 0;
+  color: #4c1d95;
+  font-size: 2.8rem;
+  font-weight: 900;
+}
+
+.cabecalho-dados p {
+  margin: 18px auto 0;
+  max-width: 780px;
+  color: #5b21b6;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.grid-dados {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.dados-item {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #d8b4fe;
+  border-radius: 28px;
+  padding: 32px 24px;
+  box-shadow: 0 10px 28px rgba(109, 40, 217, 0.1);
+  text-align: center;
+}
+
+.grafico {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    #ffffff 35%,
+    #ede2ff 36%,
+    #ede2ff 55%,
+    #7c3aed 56%,
+    #7c3aed 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4c1d95;
+  font-size: 1.4rem;
+  font-weight: 800;
+  box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.8);
+}
+
+.texto-dado {
+  margin: 0 0 16px;
+  color: #5b21b6;
+  line-height: 1.8;
+  font-size: 0.98rem;
+  min-height: 92px;
+}
+
+.dados-item strong {
+  display: block;
+  color: #4c1d95;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
 .cabecalho-mulheres h1 {
-  color: #6d28d9;
+  color: #ffffff;
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 .cabecalho-mulheres p {
-  color: #8b5cf6;
+  color: #f5ebff;
   font-size: 1.2rem;
 }
 
 .carrossel {
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .carrossel-track {
@@ -202,20 +471,34 @@
 }
 
 /* Animação que alterna entre mostrar e esconder os textos */
-@keyframes fadeTextoDuasOpcoes {
+@keyframes fadeTextoStella {
   0%,
-  45% {
+  40% {
     opacity: 1;
     visibility: visible;
   }
   50%,
-  95% {
+  100% {
     opacity: 0;
     visibility: hidden;
   }
-  100% {
+}
+
+@keyframes fadeTextoStem {
+  0%,
+  48% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  55%,
+  90% {
     opacity: 1;
     visibility: visible;
+  }
+  95%,
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -233,6 +516,14 @@
    RESPONSIVIDADE TABLETS
    =========================== */
 @media (max-width: 768px) {
+  .conteiner-cards-motivacoes {
+    grid-template-columns: 1fr;
+  }
+
+  .cabecalho-motivacao h2 {
+    font-size: 1.6rem;
+  }
+
   /* Reduz a altura do banner em tablets */
   .conteiner-banner {
     height: 350px;

@@ -109,7 +109,8 @@ section {
 body {
   line-height: 1;
   font-family: "Nunito", sans-serif;
-  padding-top: 90px;
+  padding-top: 0;
+  overflow-x: hidden;
 }
 ol,
 ul {
