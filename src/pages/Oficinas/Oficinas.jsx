@@ -1,8 +1,10 @@
 import "./Oficinas.css";
-import computacaoDesplugada from "../../assets/images/computacaoDesplugada.jpg";
-import programacaoScratch from "../../assets/images/Scratch.jpg";
-import pulseirasBinario from "../../assets/images/pulseirinhasBinario.jpg";
-
+import computacaoDesplugada from "../../assets/computacaoDesplugada.png";
+import programacaoScratch from "../../assets/Scratch.png";
+import pulseirasBinario from "../../assets/pulseirinhasBinario.png";
+import plaquinhaStella from "../../assets/placaComNomeDoStella.png";
+import bolinhasPuzzle from "../../assets/BolinhasPuzzle.png";
+import legoPuzzle from "../../assets/legoPuzzle.png";
 /* 
  * Página Oficinas
  *
@@ -32,7 +34,7 @@ function Oficinas() {
           <h2>Aprender fazendo, criar compartilhando</h2>
           <p>
             Aqui você pode apresentar as oficinas, os temas trabalhados e as
-            experiências oferecidas pelo Stella.aaaaaa
+            experiências oferecidas pelo Stella.
           </p>
         </div>
          
@@ -83,6 +85,49 @@ function Oficinas() {
             <img
               src={pulseirasBinario}
               alt="Oficina de pulseiras de binário"
+            />
+          </article>
+        </div>
+      </section>
+
+      <section className="secao-escape-room">
+        <div className="linha-escape-room">
+          <span className="texto-lateral esquerda">Atividade lúdica e interativa</span>
+          <div className="titulo-escape-room">
+            <h2>Escape Room</h2>
+            <p>CÓDIGO DAS CIÊNCIAS</p>
+          </div>
+          <span className="texto-lateral direita">Enigmas inspirados em cientistas</span>
+        </div>
+
+        <div className="cards-escape-room">
+          <article className="card-escape-room">
+            <div className="nuvem-card nuvem-card-escape nuvem-card-escape-1">
+              <span>Puzzle de bolinhas</span>
+            </div>
+            <img
+              src={bolinhasPuzzle}
+              alt="Atividade do escape room com peças de montagem"
+            />
+          </article>
+
+          <article className="card-escape-room">
+            <div className="nuvem-card nuvem-card-escape nuvem-card-escape-2">
+              <span></span>
+            </div>
+            <img
+              src={plaquinhaStella}
+              alt="Pessoas resolvendo enigmas em computador"
+            />
+          </article>
+
+          <article className="card-escape-room">
+            <div className="nuvem-card nuvem-card-escape nuvem-card-escape-3">
+              <span>Construindo o código</span>
+            </div>
+            <img
+              src={legoPuzzle}
+              alt="Materiais científicos do escape room"
             />
           </article>
         </div>
