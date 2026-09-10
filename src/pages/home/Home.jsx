@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./Home.css";
 import { FaCog, FaLightbulb, FaRocket, FaHeart } from "react-icons/fa";
-import participantesDoStella from "../../assets/participantesDoStella.png";
+import participantesDoStella from "../../assets/participantesDoStella.jpg";
 import marieCurie from "../../assets/marie-curie.png";
 import adaLovelace from "../../assets/ada-lovelace.png";
 import katherineJohnson from "../../assets/katherine-johnson.png";
@@ -13,6 +13,7 @@ import maryKeller from "../../assets/mary-keller.png";
 import annieEasley from "../../assets/annie-easley.jpg";
 import hedyLamarr from "../../assets/hedy-lamarr.jpg";
 import joanClarke from "../../assets/joan-clarke.png";
+import sophieGermain from "../../assets/sophie-germain.jpg";
 /**
  * Componente Home - Página Inicial do Site Stella
  *
@@ -242,6 +243,15 @@ function Home() {
                 target="_blank"
               >
                 <img src={joanClarke} alt="Joan Clarke" />
+              </a>
+              <h2>Joan Clarke</h2>
+            </div>
+            <div className="card-cientista">
+              <a
+                href="https://pt.wikipedia.org/wiki/Sophie_Germain"
+                target="_blank"
+              >
+                <img src={sophieGermain} alt="Sophie Germain" />
               </a>
               <h2>Joan Clarke</h2>
             </div>

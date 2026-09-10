@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import "./Menu.css";
 import logo from "../../assets/logo_stella.png";
 
@@ -15,6 +15,8 @@ import logo from "../../assets/logo_stella.png";
 function Menu() {
   // Estado para controlar se o menu deve estar em modo reduzido
   const [rolado, setRolado] = useState(false);
+  const [participantesVisivel, setParticipantesVisivel] = useState(false);
+  const location = useLocation();
 
   /**
    * Hook useEffect - Monitora o scroll da página
@@ -31,6 +33,30 @@ function Menu() {
     return () => window.removeEventListener("scroll", aoRolar);
   }, []);
 
+  useEffect(() => {
+    const secaoParticipantes = document.getElementById("participantes");
+    if (!secaoParticipantes || location.pathname !== "/QuemSomos") {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setParticipantesVisivel(entry.isIntersecting),
+      { threshold: 0.1 },
+    );
+
+    observer.observe(secaoParticipantes);
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
+  const participantesAtivo =
+    location.pathname === "/QuemSomos" && participantesVisivel;
+  const voltarAoInicio = () => window.scrollTo(0, 0);
+  const irParaParticipantes = () => {
+    document
+      .getElementById("participantes")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <>
       {/* Cabeçalho/Menu fixo que acompanha o scroll */}
@@ -46,35 +72,66 @@ function Menu() {
           <ul className="conteiner-lista">
             {/* Link para Home */}
             <li>
-              <NavLink className="link-nav" to="/">
+              <NavLink
+                className={({ isActive }) =>
+                  `link-nav ${isActive && !participantesAtivo ? "active" : ""}`
+                }
+                to="/"
+                end
+                onClick={voltarAoInicio}
+              >
                 Home
               </NavLink>
             </li>
 
             {/* Link para Quem Somos */}
             <li>
-              <NavLink className="link-nav" to="/QuemSomos">
+              <NavLink
+                className={({ isActive }) =>
+                  `link-nav ${isActive && !participantesAtivo ? "active" : ""}`
+                }
+                to="/QuemSomos"
+                onClick={voltarAoInicio}
+              >
                 Quem somos
               </NavLink>
             </li>
 
             {/* Link para Participantes */}
             <li>
-              <NavLink className="link-nav" to="/Participantes">
+              <NavLink
+                className={({ isActive }) =>
+                  `link-nav ${isActive && participantesAtivo ? "active" : ""}`
+                }
+                to="/QuemSomos#participantes"
+                onClick={irParaParticipantes}
+              >
                 Participantes
               </NavLink>
             </li>
 
             {/* Link para Oficinas */}
             <li>
-              <NavLink className="link-nav" to="/Oficinas">
+              <NavLink
+                className={({ isActive }) =>
+                  `link-nav ${isActive ? "active" : ""}`
+                }
+                to="/Oficinas"
+                onClick={voltarAoInicio}
+              >
                 Oficinas
               </NavLink>
             </li>
 
             {/* Link para Eventos */}
             <li>
-              <NavLink className="link-nav" to="/Eventos">
+              <NavLink
+                className={({ isActive }) =>
+                  `link-nav ${isActive ? "active" : ""}`
+                }
+                to="/Eventos"
+                onClick={voltarAoInicio}
+              >
                 Eventos
               </NavLink>
             </li>

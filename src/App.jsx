@@ -4,7 +4,6 @@ import Menu from "./components/Menu/Menu";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/home/Home";
 import QuemSomos from "./pages/QuemSomos/QuemSomos";
-import Participantes from "./pages/Participantes/Participantes";
 import MulheresNaCiencia from "./pages/MulheresNaCiencia/MulheresNaCiencia";
 import Oficinas from "./pages/Oficinas/Oficinas";
 import Eventos from "./pages/Eventos/Eventos";
@@ -34,7 +33,7 @@ function App() {
         <Route path="/QuemSomos" element={<QuemSomos />} />
 
         {/* Página Participantes */}
-        <Route path="/Participantes" element={<Participantes />} />
+        <Route path="/Participantes" element={<QuemSomos />} />
 
         {/* Página Mulheres na Ciência */}
         <Route path="/MulheresNaCiencia" element={<MulheresNaCiencia />} />

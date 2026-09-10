@@ -1,5 +1,22 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./QuemSomos.css";
+import professoraJoice from "../../assets/professora-joice.png";
+import mayaraMuller from "../../assets/mayara-muller.png";
+import yasmimOtt from "../../assets/yasmim-ott.png";
+import anaEloisa from "../../assets/ana-eloisa.png";
+import anitaKiesewetter from "../../assets/anita-kiesewetter.png";
+import beatrizBenigni from "../../assets/beatriz-benigni.png";
+import francineRech from "../../assets/francine-rech.png";
+import gabrielaGomes from "../../assets/gabriela-gomes.png";
+import gabrieleDaSilva from "../../assets/gabriele-da-silva.png";
+import jessicaLouise from "../../assets/jessica-louise.png";
+import kauani from "../../assets/kauani.png";
+import pamelaLidia from "../../assets/pamela-lidia.png";
+import sabrinaDoRosario from "../../assets/sabrina-do-rosario.png";
+import sofiaSilveira from "../../assets/sofia-silveira.png";
+
+
 
 /**
  * Página Quem Somos
@@ -10,6 +27,19 @@ import "./QuemSomos.css";
  */
 function QuemSomos() {
   const [visibleTimelineItems, setVisibleTimelineItems] = useState([]);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash !== "#participantes") return undefined;
+
+    const frame = window.requestAnimationFrame(() => {
+      document
+        .getElementById("participantes")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [location.hash]);
 
   const timelineEventos = [
     {
@@ -147,6 +177,128 @@ function QuemSomos() {
                 <div className="timeline-bola" />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+      <section className="secao-participantes" id="participantes">
+        <div className="conteudo-participantes">
+          <div className="cabecalho-participantes">
+            <p className="tag-participantes">Participantes</p>
+            <h2>Quem faz parte do Stella?</h2>
+          </div>
+          <div className="grade-participantes zigzag-participantes">
+          <div className="linha-participante esquerda">
+            <img
+              className="foto-participante"
+              src={professoraJoice}
+              alt="Participante do Stella"
+            />
+            <span className="nome-participante">Profª Joice Luiz Jeronimo</span>
+          </div>
+          <div className="linha-participante direita">
+            <span className="nome-participante">Mayara Müller</span>
+            <img
+              className="foto-participante"
+              src={mayaraMuller}
+              alt="Participante do Stella"
+            />
+          </div>
+          <div className="linha-participante esquerda">
+            <img
+              className="foto-participante"
+              src={yasmimOtt}
+              alt="Participante do Stella"
+            />
+            <span className="nome-participante">Yasmim Ott</span>
+          </div>
+          <div className="linha-participante direita">
+            <span className="nome-participante">Ana Eloisa L. Da Conceição</span>
+            <img
+              className="foto-participante"
+              src={anaEloisa}
+              alt="Participante do Stella"
+            />
+          </div>
+          <div className="linha-participante esquerda">
+            <img
+              className="foto-participante"
+              src={anitaKiesewetter}
+              alt="Participante do Stella"
+            />
+            <span className="nome-participante">Anita Kiesewetter</span>
+          </div>
+          <div className="linha-participante direita">
+            <span className="nome-participante">Francine Rech</span>
+            <img
+              className="foto-participante"
+              src={francineRech}
+              alt="Participante do Stella"
+            />
+          </div>
+          <div className="linha-participante esquerda">
+            <img
+              className="foto-participante"
+              src={sofiaSilveira}
+              alt="Participante do Stella"
+            />
+            <span className="nome-participante">Sofia Silveira</span>
+          </div>
+          <div className="linha-participante direita">
+            <span className="nome-participante">Gabriela Gomes</span>
+            <img
+              className="foto-participante"
+              src={gabrielaGomes}
+              alt="Participante do Stella"
+            />
+          </div>
+          <div className="linha-participante esquerda">
+            <img
+              className="foto-participante"
+              src={sabrinaDoRosario}
+              alt="Participante do Stella"
+            />
+            <span className="nome-participante">Sabrina Do Rosário</span>
+          </div>
+          <div className="linha-participante direita">
+            <span className="nome-participante">Beatriz Benigni</span>
+            <img
+              className="foto-participante"
+              src={beatrizBenigni}
+              alt="Participante do Stella"
+            />
+          </div>
+          <div className="linha-participante esquerda">
+            <img
+              className="foto-participante"
+              src={gabrieleDaSilva}
+              alt="Participante do Stella"
+            />
+            <span className="nome-participante">Gabriele da Silva</span>
+          </div>
+          <div className="linha-participante direita">
+            <span className="nome-participante">Jéssica Louise</span>
+            <img
+              className="foto-participante"
+              src={jessicaLouise}
+              alt="Participante do Stella"
+            />
+          </div>
+          <div className="linha-participante esquerda">
+            <img
+              className="foto-participante"
+              src={pamelaLidia}
+              alt="Participante do Stella"
+            />
+            <span className="nome-participante">Pâmela Lídia</span>
+          </div>
+          <div className="linha-participante direita">
+            <span className="nome-participante">Kauani</span>
+            <img
+              className="foto-participante"
+              src={kauani}
+              alt="Participante do Stella"
+            />
+          </div>
           </div>
         </div>
       </section>
